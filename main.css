@@ -1,0 +1,249 @@
+@font-face {
+font-family: 'Inter';
+font-style:  normal;
+font-weight: 300;
+src: url("Inter-Thin.woff2") format("woff2"),
+        url("Inter-Thin.woff") format("woff");
+}
+
+@font-face {
+font-family: 'Inter';
+font-style:  normal;
+font-weight: 400;
+src: url("Inter-Regular.woff2") format("woff2"),
+        url("Inter-Regular.woff") format("woff");
+}
+
+@font-face {
+font-family: 'Inter';
+font-style:  normal;
+font-weight: 600;
+src: url("Inter-SemiBold.woff2") format("woff2"),
+        url("Inter-SemiBold.woff") format("woff");
+}
+
+/* Colors---------------------- */
+/* light mode */
+@media (prefers-color-scheme: light) {
+    :root{
+        --colorPrimary:#000;
+        --colorSecondary:#616161;
+        --colorTertiary:#959595;
+        --colorLine:#ECECEC;
+        --colorAccent:#ff0000;
+        --colorBackground:#F8F8F8;
+        --colorNeutral:#fff;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    :root{
+        --colorPrimary:#fff;
+        --colorSecondary:#999;
+        --colorTertiary:#666;
+        --colorLine:#333;
+        --colorAccent:#ff0000;
+        --colorBackground:#000;
+        --colorNeutral:#000;
+    }
+}
+/* Other constants---------------------- */
+:root{
+    --speedFast: 300ms;
+    --speedMedium: 500ms;
+    --speedSlow: 800ms;
+    --speedInstant: 0ms;
+    --speedInstant: 0ms;
+}
+html{
+    font-size: 62.5%;
+    height: 100%;
+}
+
+body {
+    font-size: 1.4rem;
+    line-height: 1.4;
+    font-family: 'Inter';
+    font-weight: 400;
+    color: var(--colorSecondary);
+    background-color: var(--colorBackground);
+}
+h1{
+    color: var(--colorPrimary);
+    font-size: 3.4rem;
+    font-weight: 400;
+    line-height: 1.2;   
+    letter-spacing: -1%;
+}
+h2{
+    color: var(--colorSecondary);
+    font-weight: 400;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    margin-bottom: 16px;
+}
+
+/* layout --------- */
+section{
+    width: 100%;
+}
+
+.gridParent{
+    height: 100%;
+    max-width: 1280px;
+    margin: 0px auto;
+    padding: 24px 64px 32px 64px;
+    box-sizing: border-box;
+    display: grid;
+    height: 100%;
+    width: 100%;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 40px auto 25%; 
+    column-gap: 24px;
+    row-gap: 24px;
+    grid-template-areas: 
+    "nav nav nav nav"
+    "main main main ."
+    "detail detail detail detail";
+}
+
+nav{
+    grid-area: nav;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.buttonGroup{
+    display: flex;
+    height: 38px;
+}
+.main{
+    grid-area: main;
+    align-self: end;
+}
+.detail{
+    grid-area: detail;
+    align-self: end;
+}
+
+.cell{
+    border-top: 1px solid var(--colorLine);
+    border-bottom: 1px solid var(--colorLine);
+    margin-bottom: -1px;
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0px;
+}
+
+.cell p:first-child{
+    color: var(--colorPrimary);
+}
+
+button{
+    font-family: 'Inter';
+    font-size: 1.6rem; 
+    color: var(--colorPrimary);
+    background-color: var(--colorBackground);
+    border: 1px solid var(--colorPrimary);
+    padding: 8px 12px;
+    border-radius: 24px;
+    cursor: pointer;
+}  
+.buttonGroup button:first-child, footer button:first-child{
+    margin-right:24px;
+}
+
+.work{
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    column-gap: 24px;
+}
+.logo{
+    display: flex;
+    align-items: center;
+}
+
+.logo img{
+    height: 20px;
+    margin-right: 8px;
+}
+.logo span{
+    color: var(--colorPrimary);
+    font-weight: 600;
+    font-size: 1.6rem;
+}
+
+footer{
+    display: none;
+}
+
+/* responsive --------- */
+@media only screen and (max-width: 1000px) {
+    .gridParent{
+        padding: 8px 32px 32px 32px;
+        grid-template-rows: 64px auto 35%; 
+        grid-template-areas: 
+        "nav nav nav nav"
+        "main main main main"
+        "detail detail detail detail";
+    }
+    .work{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media only screen and (max-width: 720px) {
+    .work{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media only screen and (max-width: 520px) {
+    h1{
+        font-size:2.5rem;
+        line-height: 1.4;
+    }
+    .gridParent{
+        padding: 8px 24px 24px 24px;
+        grid-template-rows: 64px auto auto; 
+    }
+    .work{
+        grid-template-columns: 1fr;
+    }
+    .buttonGroup{
+        display: none;
+    }
+    footer{
+        display: block;
+        position: fixed;
+        bottom: 0;
+        left: calc(50% - (315.531px)/2 );
+        bottom: 24px;
+    }
+    .detail{
+        padding-top: 24px;
+    }
+}
+
+
+/* animation --------- */
+
+body {
+    animation: fadeInAnimation ease 1s;
+}
+
+button:hover{
+    background-color: var(--colorLine);
+    transition: 0.3s;
+}
+  
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+     }
+}
