@@ -152,6 +152,16 @@ button{
 .buttonGroup button:first-child, footer button:first-child{
     margin-right:24px;
 }
+.links{
+    display: flex;
+    align-items: center;
+}
+.textLink{
+    font-family: 'Inter';
+    font-size: 1.6rem; 
+    color: var(--colorPrimary); 
+    margin-right:28px; 
+}
 
 .work{
     box-sizing: border-box;
@@ -222,6 +232,10 @@ footer{
     }
     .detail{
         padding-top: 24px;
+        padding-bottom: 84px;
+    }
+    .textLink{
+        margin-right:0px; 
     }
 }
 
@@ -235,6 +249,10 @@ body {
 button:hover{
     background-color: var(--colorLine);
     transition: 0.3s;
+}
+.textLink:hover{
+    transition: 0.3s;
+    color: var(--colorSecondary); 
 }
   
 @keyframes fadeInAnimation {
