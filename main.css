@@ -150,7 +150,7 @@ button{
     cursor: pointer;
 }  
 .buttonGroup button:first-child, footer button:first-child{
-    margin-right:24px;
+    margin-right:32px;
 }
 .links{
     display: flex;
@@ -161,6 +161,9 @@ button{
     font-size: 1.6rem; 
     color: var(--colorPrimary); 
     margin-right:28px; 
+}
+.textLink:first-child{
+    margin-right: 16px;
 }
 
 .work{
@@ -227,7 +230,7 @@ footer{
         display: block;
         position: fixed;
         bottom: 0;
-        left: calc(50% - (315.531px)/2 );
+        left: calc(50% - (323px)/2 );
         bottom: 24px;
     }
     .detail{
