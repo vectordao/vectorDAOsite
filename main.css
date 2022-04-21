@@ -98,7 +98,7 @@ section{
     height: 100%;
     width: 100%;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 40px auto 25%; 
+    grid-template-rows: 40px auto 40%; 
     column-gap: 24px;
     row-gap: 24px;
     grid-template-areas: 
@@ -195,7 +195,7 @@ footer{
 @media only screen and (max-width: 1000px) {
     .gridParent{
         padding: 8px 32px 32px 32px;
-        grid-template-rows: 64px auto 35%; 
+        grid-template-rows: 64px auto 44%; 
         grid-template-areas: 
         "nav nav nav nav"
         "main main main main"
